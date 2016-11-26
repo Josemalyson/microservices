@@ -4,7 +4,7 @@ Spring Cloud Netflix project base, Spring Rest Repository.
 # Read me
 The micro-service project is based on five main projects
 
-student
+# Student
 The student project is mapped with a Student Entity where CRUD operations are implemented by a RepositoryRestResource annotation, being only a query service and basic operations such as saving, editing, exiting and listing
 Accessing through the url http://localhost:8081/alunos/.
 
