@@ -6,5 +6,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 zuul:
   routes:
+    provas: /provas/**
     alunos: /alunos/**
     materias: /materias/**
