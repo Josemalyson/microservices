@@ -3,14 +3,15 @@ package com.avaliacao.service;
 import java.util.List;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.avaliacao.model.Materia;
 
-@FeignClient("materiais")
+@FeignClient("materias/materias")
 public interface MateriaService {
 
-	@GetMapping
+	@RequestMapping(method = RequestMethod.GET)
 	public List<Materia> listarMateriais();
 
 }

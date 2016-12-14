@@ -18,8 +18,7 @@ public class ProvaController {
 	@Autowired
 	private AvaliacaoService avaliacaoService;
 	
-	
-	@GetMapping("alunos/{id}}")
+	@GetMapping("alunos/{idAluno}")
 	public List<Prova> listarProvasDoAluno(@PathVariable("idAluno") String idAluno){
 		return avaliacaoService.listarProvasDoAluno(idAluno);
 	}
