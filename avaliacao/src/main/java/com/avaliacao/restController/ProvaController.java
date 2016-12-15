@@ -1,7 +1,5 @@
 package com.avaliacao.restController;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +17,7 @@ public class ProvaController {
 	private AvaliacaoService avaliacaoService;
 	
 	@GetMapping("alunos/{idAluno}")
-	public List<Prova> listarProvasDoAluno(@PathVariable("idAluno") String idAluno){
-		return avaliacaoService.listarProvasDoAluno(idAluno);
+	public Prova getProvaDoAluno(@PathVariable("idAluno") String idAluno){
+		return avaliacaoService.getProvaDoAluno(idAluno);
 	}
 }

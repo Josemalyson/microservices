@@ -27,11 +27,11 @@ public class Prova implements Serializable {
 	@Column(name = "nota")
 	private BigDecimal nota;
 
-	@Column(name = "idAluno")
-	private Long idAluno;
+	@Column(name = "nomeAluno")
+	private String nomeAluno;
 
-	@Column(name = "idMateria")
-	private Long idMateria;
+	@Column(name = "nomeMateria")
+	private String nomeMateria;
 
 	public Long getId() {
 		return id;
@@ -41,20 +41,28 @@ public class Prova implements Serializable {
 		this.id = id;
 	}
 
-	public Long getIdAluno() {
-		return idAluno;
+	public BigDecimal getNota() {
+		return nota;
 	}
 
-	public void setIdAluno(Long idAluno) {
-		this.idAluno = idAluno;
+	public String getNomeAluno() {
+		return nomeAluno;
 	}
 
-	public Long getIdMateria() {
-		return idMateria;
+	public String getNomeMateria() {
+		return nomeMateria;
 	}
 
-	public void setIdMateria(Long idMateria) {
-		this.idMateria = idMateria;
+	public void setNota(BigDecimal nota) {
+		this.nota = nota;
+	}
+
+	public void setNomeAluno(String nomeAluno) {
+		this.nomeAluno = nomeAluno;
+	}
+
+	public void setNomeMateria(String nomeMateria) {
+		this.nomeMateria = nomeMateria;
 	}
 
 	@Override
@@ -88,9 +96,5 @@ public class Prova implements Serializable {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Prova [id=" + id + ", nota=" + nota + ", idAluno=" + idAluno + ", idMateria=" + idMateria + "]";
-	}
 
 }
