@@ -8,10 +8,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 public class MateriaApplication {
 	
-	private MateriaApplication() {
-		//sonar
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(MateriaApplication.class, args);
 	}
