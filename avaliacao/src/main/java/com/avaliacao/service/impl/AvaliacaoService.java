@@ -1,6 +1,8 @@
 package com.avaliacao.service.impl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,18 +22,21 @@ public class AvaliacaoService {
 	@Autowired
 	private MateriaService materiaService;
 
-	public Prova getProvaDoAluno(String idAluno) {
+	public List<Prova> findAll(String idAluno) {
 
+		List<Materia> materias = materiaService.listarMateriais();
 		Aluno aluno = this.alunoService.getOne(idAluno);
+		
+		List<Prova> provas = new ArrayList<>();
+		materias.forEach(materia -> {
+			Prova p = new Prova();
+			p.setNomeAluno(aluno.getNome());
+			p.setNomeMateria(materia.getNome());
+			p.setNota(new BigDecimal(10));
+			provas.add(p);
+		});
+		return provas;
 
-		Materia materia = this.materiaService.getMateria("1");
-
-		Prova prova = new Prova();
-		prova.setNomeAluno(aluno.getNome());
-		prova.setNomeMateria(materia.getNome());
-		prova.setNota(new BigDecimal(10));
-
-		return prova;
 	}
 
 }
