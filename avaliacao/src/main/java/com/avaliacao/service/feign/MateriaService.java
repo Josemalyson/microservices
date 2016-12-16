@@ -1,4 +1,4 @@
-package com.avaliacao.service;
+package com.avaliacao.service.feign;
 
 import java.util.List;
 

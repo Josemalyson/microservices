@@ -1,4 +1,4 @@
-package com.avaliacao.service;
+package com.avaliacao.service.feign;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +11,6 @@ import com.avaliacao.model.Aluno;
 public interface AlunoService {
 
 	@RequestMapping(value="{id}", method = RequestMethod.GET)
-	public Aluno getOne(@PathVariable("id") String idAluno);
+	public Aluno findBy(@PathVariable("id") String idAluno);
 
 }

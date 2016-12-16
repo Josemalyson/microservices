@@ -10,22 +10,24 @@ import org.springframework.stereotype.Service;
 import com.avaliacao.model.Aluno;
 import com.avaliacao.model.Materia;
 import com.avaliacao.model.Prova;
-import com.avaliacao.service.AlunoService;
-import com.avaliacao.service.MateriaService;
+import com.avaliacao.service.AvaliacaoService;
+import com.avaliacao.service.hystrix.clients.AlunoServiceHystrix;
+import com.avaliacao.service.hystrix.clients.AvaliacaoServiceHystrix;
 
 @Service
-public class AvaliacaoService {
+public class AvaliacaoServiceImpl implements AvaliacaoService{
 
 	@Autowired
-	private AlunoService alunoService;
+	private AvaliacaoServiceHystrix avaliacaoServiceHystrix;
 
 	@Autowired
-	private MateriaService materiaService;
+	private AlunoServiceHystrix alunoServiceHystrix;
 
+	@Override
 	public List<Prova> findAll(String idAluno) {
 
-		List<Materia> materias = materiaService.listarMateriais();
-		Aluno aluno = this.alunoService.getOne(idAluno);
+		List<Materia> materias = this.avaliacaoServiceHystrix.listarMateriais();
+		Aluno aluno = this.alunoServiceHystrix.findBy(idAluno);
 		
 		List<Prova> provas = new ArrayList<>();
 		materias.forEach(materia -> {

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.avaliacao.model.Prova;
-import com.avaliacao.service.impl.AvaliacaoService;
+import com.avaliacao.service.AvaliacaoService;
 
 @RestController
 @RequestMapping("provas")
