@@ -18,6 +18,7 @@ Eureka server project
 # Zuul Routing
 Project that filters as routes for services and internal (microservices Students and Matters) and public (Project Evaluation)
 
-Evaluation
-Project Web / Mobile consumer services Students and Materials that seek as evidence made by the student searched in the url
-http://localhost:8080/tests/alunos/{idAluno}.
+# Evaluation
+The project return an list of evalution of students create of systems. Project Web / Mobile consumer services Students and Materials that seek as evidence made by the student searched in the url.
+
+http://localhost:8080/provas/provas/alunos/1.
